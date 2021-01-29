@@ -1,3 +1,4 @@
+import { Message } from "@angular/compiler/src/i18n/i18n_ast";
 import { Component, OnInit } from "@angular/core";
 import { IProduct } from "./product";
 
@@ -84,7 +85,11 @@ export class ProductListComponent implements OnInit {
       // the class constructor is a function that is executed when a component is first initialized
       constructor() {
         this.filteredProducts = this.products;
-        this._listFilter = 'cart';
+        this._listFilter = '';
+      }
+
+      onRatingClicked(message: string): void {
+        this.pageTitle = 'Product List: ' + message;
       }
 
       // this code starts by converting the filter criteria to lowercase 
