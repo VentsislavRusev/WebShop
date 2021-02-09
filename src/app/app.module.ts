@@ -11,9 +11,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { StarComponent } from './shared/star.component';
 import { ProductDetailComponent } from './products/product-detail.component';
 
+
 @NgModule({
   declarations: [
     AppComponent, ProductListComponent, ConvertToSpacesPipe, StarComponent, ProductDetailComponent
+import { WelcomeComponent } from './home/welcome.component';
+
+@NgModule({
+  declarations: [
+    AppComponent, ProductListComponent, ConvertToSpacesPipe, StarComponent, ProductDetailComponent, WelcomeComponent
   ],
   imports: [
     BrowserModule,
