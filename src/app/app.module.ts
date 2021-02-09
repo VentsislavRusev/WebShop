@@ -10,12 +10,8 @@ import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
 import { AppRoutingModule } from './app-routing.module';
 import { StarComponent } from './shared/star.component';
 import { ProductDetailComponent } from './products/product-detail.component';
-
-
-@NgModule({
-  declarations: [
-    AppComponent, ProductListComponent, ConvertToSpacesPipe, StarComponent, ProductDetailComponent
 import { WelcomeComponent } from './home/welcome.component';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +24,10 @@ import { WelcomeComponent } from './home/welcome.component';
     HttpClientModule,
     RouterModule.forRoot([
       {path: 'products', component:ProductListComponent},
-      {path: 'products/:id', component:ProductDetailComponent}
+      {path: 'products/:id', component:ProductDetailComponent},
+      {path: 'welcome', component:WelcomeComponent},
+      {path: '', redirectTo:'welcome', pathMatch:'full'},
+      {path: '**', redirectTo:'welcome', pathMatch:'full'} // '**' symbol represents a wildcard, it is used for 404 message when the url address is not found. In this simple example I am using the wildcard to redirect to the main page every time someone types something different in the browser
     ])
   ],
   providers: [],
