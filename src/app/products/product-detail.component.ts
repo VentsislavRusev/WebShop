@@ -7,6 +7,7 @@ import { IProduct } from './product';
   styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit {
+
   pageTitle = 'Product Detail';
   product: IProduct | undefined;
 
